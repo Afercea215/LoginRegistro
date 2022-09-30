@@ -12,7 +12,7 @@
         añadeUsuario($user,$password,$rol);
         header("Location: ../vista/listadoUsuarios.php");
     } else {
-        header("Location: ../vista/formNuevoUser.php?error=Debe rellenar todo los datos");
+        header("Location: ../vista/formNuevoUser.php?error=Debe rellenar todo los datos&&user=$user&&pass=$password&&rol=$rol");
     }
     //añadeUsuario("pepe","torres");
 ?>

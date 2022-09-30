@@ -7,17 +7,43 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+/*         echo $_GET['rol'];
+        echo $_GET['user'];
+        echo $_GET['pass']; */
+    ?>
 
     <form action="../control/procesaNuevoUser.php" method="post">
-        <input type="text" name="user" id="">
-        <input type="password" name="password" id="">
+        <input type="text" name="user" id="" value='<?php
+                if (!empty($_GET['user'])) {
+                        echo $_GET['user'];   
+                }
+            ?>'>
+        <input type="password" name="password" id="" value='<?php
+                if (!empty($_GET['pass'])) {
+                        echo $_GET['pass'];   
+                }
+            ?>'>
         <button type="submit">Registrar</button>
         <label for="">Mindundi</label>
-        <input type="radio" name="rol" value="mindundi">
+        <input type="radio" name="rol" value="mindundi" <?php
+                if (!empty($_GET['rol'])) {
+                    if ($_GET['rol']=="mindundi") {
+                        echo "checked='checked'";
+                    }    
+                }
+            ?>
+        >
         <label for="">Admin</label>
-        <input type="radio" name="rol" v
-        
-        alue="admin">
+        <input type="radio" name="rol" value="admin"
+            <?php
+                if (!empty($_GET['rol'])) {
+                    if ($_GET['rol']=="admin") {
+                        echo "checked='checked'";
+                    }    
+                }
+            ?>
+        >
     </form>
     <?php
         if (!empty($_GET["error"])){
