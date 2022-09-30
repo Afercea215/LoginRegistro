@@ -7,19 +7,23 @@
     <title>Document</title>
 </head>
 <body>
+
     <form action="../control/procesaNuevoUser.php" method="post">
         <input type="text" name="user" id="">
-        <?php
-            if (!empty($_GET["error"])){
-                echo $_GET["error"];
-        ?>
         <input type="password" name="password" id="">
         <button type="submit">Registrar</button>
         <label for="">Mindundi</label>
         <input type="radio" name="rol" value="mindundi">
         <label for="">Admin</label>
-        <input type="radio" name="rol" value="admin">
+        <input type="radio" name="rol" v
+        
+        alue="admin">
     </form>
+    <?php
+        if (!empty($_GET["error"])){
+            echo "<p style='color:red'>".$_GET["error"]."</p>";
+        }
+    ?>
 </body>
 </html>
 

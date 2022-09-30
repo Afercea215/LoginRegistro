@@ -10,9 +10,9 @@
 
     if (validaInputText($user) && validaInputText($password) && validaInputText($rol)) {
         añadeUsuario($user,$password,$rol);
-        header("Location: ../vista/listadoUsuarios.php?error='Debe rellenar todo los datos'");
+        header("Location: ../vista/listadoUsuarios.php");
     } else {
-        header("Location: ../vista/formNuevoUser.html");
+        header("Location: ../vista/formNuevoUser.php?error=Debe rellenar todo los datos");
     }
     //añadeUsuario("pepe","torres");
 ?>
